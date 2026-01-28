@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compilers</title>
+    <link rel="stylesheet" href="compilers.css">
+</head>
+<body>
+    <!-- AUTHENTICATION VIEW -->
+    <div id="auth-view" class="auth-container">
+        <!-- Step 1: Role Selection -->
+        <div id="role-selection" class="auth-card">
+            <h1>Select Role</h1>
+            <div class="role-buttons">
+                <button id="btn-owner" class="auth-btn">Owner</button>
+                <button id="btn-member" class="auth-btn">Member</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Login Form -->
+        <div id="login-form-wrapper" class="auth-card hidden">
+            <h1 id="login-title">Login</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="btn-back" class="back-link">Back</button>
+                    <button type="submit" class="submit-btn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN APP VIEW (Originally Hidden) -->
+    <div id="app-view" class="hidden">
+        <header>
+            <div class="header-left">
+                <div class="logo">Compilers</div>
+                <button id="menu-btn" class="menu-btn">⋮</button>
+            </div>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </header>
+
+        <div id="sidebar" class="sidebar">
+            <button id="close-btn" class="close-btn">&times;</button>
+            <nav>
+                <a href="#" data-page="home">Home</a>
+                <a href="#" data-page="members">Members</a>
+                <a href="#" data-page="progress">Progress</a>
+                <a href="#" data-page="practice">Practice</a>
+            </nav>
+        </div>
+        <div id="overlay" class="overlay"></div>
+
+        <main id="main-content">
+            <!-- Welcome Banner will be injected here -->
+            <div id="home-view" class="view active">
+                <div id="welcome-message" class="welcome-banner">
+                    <!-- Injected by JS -->
+                </div>
+
+                <div class="card-container">
+                    <div class="card" id="progress-card">
+                        <h2>Progress</h2>
+                        <div class="todo-preview">
+                            <p>Active Tasks: <span id="active-tasks-count">0</span></p>
+                        </div>
+                    </div>
+                    <div class="card" id="practice-card">
+                        <h2>Practice</h2>
+                        <div class="timer-preview">
+                            <p>Last Session: <span id="last-session-time">--:--</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <section class="members-section">
+                    <div class="section-header">
+                        <h2>Members</h2>
+                        <button id="add-member-btn" class="action-btn">+</button>
+                    </div>
+                    <ul id="members-list" class="members-list">
+                        <!-- Members injected here -->
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Progress View -->
+            <div id="progress-view" class="view">
+                <h2>Project Todo List</h2>
+                <div class="input-group">
+                    <input type="text" id="todo-input" placeholder="Add a new task...">
+                    <button id="add-todo-btn">Add</button>
+                </div>
+                <ul id="todo-list" class="todo-list">
+                    <!-- Todos injected here -->
+                </ul>
+                <button class="back-btn" data-target="home">Back to Dashboard</button>
+            </div>
+
+            <!-- Practice View -->
+            <div id="practice-view" class="view">
+                <h2>Practice Timer</h2>
+                <div class="timer-display">
+                    <span id="minutes">00</span>:<span id="seconds">00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="start-timer-btn">Start</button>
+                    <button id="stop-timer-btn">Stop</button>
+                    <button id="reset-timer-btn">Reset</button>
+                </div>
+                <button class="back-btn" data-target="home">Back to Dashboard</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <span >About</span>
+                <span>Contact</span>
+                <span>Instagram</span>
+                <span>LinkedIn</span>
+            </div>
+            <p>&copy; 2026 Compilers Project</p>
+        </footer>
+    </div>
+
+    <script src="compilers.js"></script>
+</body>
+</html>
